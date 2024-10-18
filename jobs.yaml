@@ -7,7 +7,7 @@
   tasks:
    - name: Create a jenkins job using basic authentication
      community.general.jenkins_job:
-       config: "{{ lookup('file', 'config.xml') }}"
+       config: "{{ lookup('file', 'job.xml') }}"
        name: frontend
        password: "{{jenkins_password}}"
        url: "{{jenkinns_url}}"
@@ -15,7 +15,7 @@
 
    - name: Create a jenkins job for backend
      community.general.jenkins_job:
-       config: "{{ lookup('file', 'config.xml') }}"
+       config: "{{ lookup('file', 'job.xml') }}"
        name: backend
        password: "{{jenkins_password}}"
        url: "{{jenkinns_url}}"
@@ -23,7 +23,7 @@
 
    - name: Create a jenkins job for expense-parameters
      community.general.jenkins_job:
-       config: "{{ lookup('file', 'config.xml') }}"
+       config: "{{ lookup('file', 'job.xml') }}"
        name: expense-parameters
        password: "{{jenkins_password}}"
        url: "{{jenkinns_url}}"
@@ -31,7 +31,7 @@
 
    - name: Create a jenkins job for expense-terraform
      community.general.jenkins_job:
-       config: "{{ lookup('file', 'config.xml') }}"
+       config: "{{ lookup('file', 'job.xml') }}"
        name: expense-terraform
        password: "{{jenkins_password}}"
        url: "{{jenkinns_url}}"
