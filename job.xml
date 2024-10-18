@@ -9,7 +9,7 @@
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
-          <url>https://github.com/sriharsha6197/infra-creation-terraform.git</url>
+          <url>https://github.com/sriharsha6197/{{repo_name}}</url>
           <credentialsId>ed478922-a024-47c5-82c4-36bf57c19bad</credentialsId>
         </hudson.plugins.git.UserRemoteConfig>
       </userRemoteConfigs>
