@@ -1,0 +1,40 @@
+- name: creation of jenkins job
+  hosts: all
+  become: yes
+  vars:
+    - jenkinns_username: {{ lookup('aws_ssm', 'jenkins_username', region='us-east-1' ) }}
+    - jenkins_password: {{ lookup('aws_ssm', 'jenkins_password', region='us-east-1' ) }}
+    - jenkinns_url: {{ lookup('aws_ssm', 'jenkins_url', region='us-east-1' ) }}
+  tasks:
+   - name: Create a jenkins job using basic authentication
+     community.general.jenkins_job:
+      config: "{{ lookup('file', 'templates/config.xml') }}"
+      name: frontend
+      password: {{jenkins_password}}
+      url: {{jenkinns_url}}
+      user: {[jenkinns_username]}
+
+   - name: Create a jenkins job using basic authentication
+     community.general.jenkins_job:
+      config: "{{ lookup('file', 'templates/config.xml') }}"
+      name: backend
+      password: {{jenkins_password}}
+      url: {{jenkinns_url}}
+      user: {[jenkinns_username]}
+
+   - name: Create a jenkins job using basic authentication
+     community.general.jenkins_job:
+      config: "{{ lookup('file', 'templates/config.xml') }}"
+      name: expense-parameters
+      password: {{jenkins_password}}
+      url: {{jenkinns_url}}
+      user: {[jenkinns_username]}
+
+   - name: Create a jenkins job using basic authentication
+     community.general.jenkins_job:
+      config: "{{ lookup('file', 'templates/config.xml') }}"
+      name: expense-terraform
+      password: {{jenkins_password}}
+      url: {{jenkinns_url}}
+      user: {[jenkinns_username]}
+    
