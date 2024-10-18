@@ -33,7 +33,7 @@
         url: "{{jenkinns_url}}"
         user: "{{jenkinns_username}}"
       vars:
-        repo_name: "{{ssm-parameters-jenkins}}"
+        repo_name: "ssm-parameters-jenkins"
 
     # - name: Create a jenkins job for expense-terraform
     #   community.general.jenkins_job:
