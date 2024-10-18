@@ -1,6 +1,5 @@
 - name: creation of jenkins job
   hosts: localhost
-  become: yes
   vars:
     jenkinns_username: "{{ lookup('aws_ssm', 'jenkins_username', region='us-east-1' ) }}"
     jenkins_password: "{{ lookup('aws_ssm', 'jenkins_password', region='us-east-1' ) }}"
