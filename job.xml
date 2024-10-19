@@ -3,7 +3,49 @@
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
+  {% if auto_trigger=="true" %}
+    <properties>
+
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+
+      <triggers>
+
+        <org.jenkinsci.plugins.gwt.GenericTrigger plugin="generic-webhook-trigger@2.2.5">
+
+          <spec></spec>
+
+          <regexpFilterText></regexpFilterText>
+
+          <regexpFilterExpression></regexpFilterExpression>
+
+          <printPostContent>false</printPostContent>
+
+          <printContributedVariables>false</printContributedVariables>
+
+          <causeString>Generic Cause</causeString>
+
+          <token>{{repo_name}}</token>
+
+          <tokenCredentialId></tokenCredentialId>
+
+          <silentResponse>false</silentResponse>
+
+          <overrideQuietPeriod>false</overrideQuietPeriod>
+
+          <shouldNotFlattern>false</shouldNotFlattern>
+
+          <allowSeveralTriggersPerBuild>false</allowSeveralTriggersPerBuild>
+
+        </org.jenkinsci.plugins.gwt.GenericTrigger>
+
+      </triggers>
+
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+
+  </properties>
+  {% else %}
   <properties/>
+  {% endif %}
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@3969.vdc9d3a_efcc6a_">
     <scm class="hudson.plugins.git.GitSCM" plugin="git@5.5.2">
       <configVersion>2</configVersion>
