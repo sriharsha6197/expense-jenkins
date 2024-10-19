@@ -14,7 +14,7 @@
         user: "{{jenkinns_username}}"
       vars:
         repo_name: "frontend"
-        auto_trigger: true
+        auto_trigger: "true"
 
     - name: Create a jenkins job for backend
       community.general.jenkins_job:
@@ -25,7 +25,7 @@
         user: "{{jenkinns_username}}"
       vars:
         repo_name: "backend"
-        auto_trigger: true
+        auto_trigger: "true"
 
     - name: Create a jenkins job for expense-parameters
       community.general.jenkins_job:
@@ -36,7 +36,7 @@
         user: "{{jenkinns_username}}"
       vars:
         repo_name: "ssm-parameters-jenkins"
-        auto_trigger: false
+        auto_trigger: "false"
 
     - name: Create a jenkins job for expense-infra-creation-terraform
       community.general.jenkins_job:
@@ -47,5 +47,5 @@
         user: "{{jenkinns_username}}"
       vars:
         repo_name: "infra-creation-terraform"
-        auto_trigger: false
+        auto_trigger: "false"
     
