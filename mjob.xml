@@ -15,12 +15,6 @@
             <allowMultiBranchWebhookTrigger>true</allowMultiBranchWebhookTrigger>
         </org.jenkinsci.plugins.workflow.multibranch.BranchJobProperty>
     </properties>
-    <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.80">
-        <script>
-        // Jenkinsfile script content here
-        </script>
-        <sandbox>true</sandbox>
-    </definition>
     <triggers/>
     <disabled>false</disabled>
 </flow-definition>
