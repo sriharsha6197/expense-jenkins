@@ -7,7 +7,7 @@
   tasks:
     - name: Create a jenkins job using basic authentication
       community.general.jenkins_job:
-        config: "{{ lookup('template', 'job.xml') }}"
+        config: "{{ lookup('template', 'mjob.xml') }}"
         name: frontend
         password: "{{jenkins_password}}"
         url: "{{jenkinns_url}}"
@@ -18,7 +18,7 @@
 
     - name: Create a jenkins job for backend
       community.general.jenkins_job:
-        config: "{{ lookup('template', 'job.xml') }}"
+        config: "{{ lookup('template', 'mjob.xml') }}"
         name: backend
         password: "{{jenkins_password}}"
         url: "{{jenkinns_url}}"
@@ -29,7 +29,7 @@
 
     - name: Create a jenkins job for expense-parameters
       community.general.jenkins_job:
-        config: "{{ lookup('template', 'job.xml') }}"
+        config: "{{ lookup('template', 'mjob.xml') }}"
         name: expense-parameters
         password: "{{jenkins_password}}"
         url: "{{jenkinns_url}}"
@@ -40,7 +40,7 @@
 
     - name: Create a jenkins job for expense-infra-creation-terraform
       community.general.jenkins_job:
-        config: "{{ lookup('template', 'job.xml') }}"
+        config: "{{ lookup('template', 'mjob.xml') }}"
         name: expense-infra-creation-terraform
         password: "{{jenkins_password}}"
         url: "{{jenkinns_url}}"
