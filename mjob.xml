@@ -16,18 +16,13 @@
     <numToKeep>-1</numToKeep>
     <abortBuilds>false</abortBuilds>
   </orphanedItemStrategy>
-  <triggers>
-    <com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger plugin="multibranch-scan-webhook-trigger@1.0.11">
-      <spec></spec>
-      <token>http://jenkins.harsha.shop:8080/multibranch-webhook-trigger/invoke?token=expense-jenkins</token>
-    </com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger>
-  </triggers>
+  <triggers/>
   <disabled>false</disabled>
   <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.1178.v969d9eb_c728e">
     <data>
       <jenkins.branch.BranchSource>
         <source class="jenkins.plugins.git.GitSCMSource" plugin="git@5.5.2">
-          <id>b0d54089-82d6-4cd7-b4e7-c42f6e519f63</id>
+          <id>3f414e16-fef1-43c9-a1ea-b1db90e4ceb6</id>
           <remote>https://github.com/sriharsha6197/{{repo_name}}</remote>
           <credentialsId></credentialsId>
           <traits>
