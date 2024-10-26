@@ -5,7 +5,7 @@ pipeline {
         stage {'Checking the stage'}
         steps{
             echo 'checking'
-            ansible-playbook jobs.yaml
+            sh 'ansible-playbook jobs.yaml'
         }
     }
 }
