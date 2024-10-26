@@ -2,49 +2,7 @@
 <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@795.ve0cb_1f45ca_9a_">
   <actions/>
   <description></description>
-  {% if auto_trigger == "true" %}
-    <properties>
-
-    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-
-      <triggers>
-
-        <org.jenkinsci.plugins.gwt.GenericTrigger plugin="generic-webhook-trigger@2.2.5">
-
-          <spec></spec>
-
-          <regexpFilterText></regexpFilterText>
-
-          <regexpFilterExpression></regexpFilterExpression>
-
-          <printPostContent>false</printPostContent>
-
-          <printContributedVariables>false</printContributedVariables>
-
-          <causeString>Generic Cause</causeString>
-
-          <token>{{repo_name}}</token>
-
-          <tokenCredentialId></tokenCredentialId>
-
-          <silentResponse>false</silentResponse>
-
-          <overrideQuietPeriod>false</overrideQuietPeriod>
-
-          <shouldNotFlattern>false</shouldNotFlattern>
-
-          <allowSeveralTriggersPerBuild>false</allowSeveralTriggersPerBuild>
-
-        </org.jenkinsci.plugins.gwt.GenericTrigger>
-
-      </triggers>
-
-    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-
-  </properties>
-  {% else %}
   <properties/>
-  {% endif %}
   <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.1178.v969d9eb_c728e">
     <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
   </folderViews>
@@ -58,13 +16,18 @@
     <numToKeep>-1</numToKeep>
     <abortBuilds>false</abortBuilds>
   </orphanedItemStrategy>
-  <triggers/>
+  <triggers>
+    <com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger plugin="multibranch-scan-webhook-trigger@1.0.11">
+      <spec></spec>
+      <token>http://jenkins.harsha.shop:8080/multibranch-webhook-trigger/invoke?token=expense-jenkins</token>
+    </com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger>
+  </triggers>
   <disabled>false</disabled>
   <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.1178.v969d9eb_c728e">
     <data>
       <jenkins.branch.BranchSource>
         <source class="jenkins.plugins.git.GitSCMSource" plugin="git@5.5.2">
-          <id>d78e8cdd-e664-4ce4-8a53-7fcdf1348ac9</id>
+          <id>b0d54089-82d6-4cd7-b4e7-c42f6e519f63</id>
           <remote>https://github.com/sriharsha6197/{{repo_name}}</remote>
           <credentialsId></credentialsId>
           <traits>
