@@ -5,27 +5,27 @@
     jenkins_password: "{{ lookup('aws_ssm', 'jenkins_password', region='us-east-1' ) }}"
     jenkinns_url: "{{ lookup('aws_ssm', 'jenkins_url', region='us-east-1' ) }}"
   tasks:
-    # - name: Create a jenkins job using basic authentication
-    #   community.general.jenkins_job:
-    #     config: "{{ lookup('template', 'mjob.xml') }}"
-    #     name: frontend
-    #     password: "{{jenkins_password}}"
-    #     url: "{{jenkinns_url}}"
-    #     user: "{{jenkinns_username}}"
-    #   vars:
-    #     repo_name: "frontend"
-    #     allowMultiBranchWebhookTrigger: "true"
+    - name: Create a jenkins job using basic authentication
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'mjob.xml') }}"
+        name: frontend
+        password: "{{jenkins_password}}"
+        url: "{{jenkinns_url}}"
+        user: "{{jenkinns_username}}"
+      vars:
+        repo_name: "frontend"
+        allowMultiBranchWebhookTrigger: "true"
 
-    # - name: Create a jenkins job for backend
-    #   community.general.jenkins_job:
-    #     config: "{{ lookup('template', 'mjob.xml') }}"
-    #     name: backend
-    #     password: "{{jenkins_password}}"
-    #     url: "{{jenkinns_url}}"
-    #     user: "{{jenkinns_username}}"
-    #   vars:
-    #     repo_name: "backend"
-    #     allowMultiBranchWebhookTrigger: "true"
+    - name: Create a jenkins job for backend
+      community.general.jenkins_job:
+        config: "{{ lookup('template', 'mjob.xml') }}"
+        name: backend
+        password: "{{jenkins_password}}"
+        url: "{{jenkinns_url}}"
+        user: "{{jenkinns_username}}"
+      vars:
+        repo_name: "backend"
+        allowMultiBranchWebhookTrigger: "true"
 
     - name: Create a jenkins job for expense-parameters
       community.general.jenkins_job:
