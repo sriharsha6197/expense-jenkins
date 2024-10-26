@@ -1,4 +1,4 @@
-- name: creation of jenkins job
+- name: creation of jenkins jobb
   hosts: localhost
   vars:
     jenkinns_username: "{{ lookup('aws_ssm', 'jenkins_username', region='us-east-1' ) }}"
