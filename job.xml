@@ -10,7 +10,7 @@
 
       <triggers>
 
-        <org.jenkinsci.plugins.gwt.GenericTrigger plugin="generic-webhook-trigger@2.2.5">
+        <org.jenkinsci.plugins.gwt.GenericTrigger plugin="workflow-multibranch@2.22">
 
           <spec></spec>
 
